@@ -64,6 +64,25 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
           templateUrl: 'templates/history.html',
           controller: 'HistoryCtrl'
         }
+      },
+      resolve: {
+        getOrders: function(orderService){
+          return orderService.index();
+        }
+      }
+    })
+    .state('app.history_info', {
+      url: '/history/:id',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/history_info.html',
+          controller: 'HistoryInfoCtrl'
+        }
+      },
+      resolve: {
+        getOrder: function(orderService,$stateParams){
+          return orderService.show($stateParams.id);
+        }
       }
     })
     .state('app.shop', {
@@ -106,6 +125,25 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
         'menuContent': {
           templateUrl: 'templates/cart.html',
           controller: 'CartCtrl'
+        }
+      },
+      resolve: {
+        getCards: function(cardService){
+          return cardService.index();
+        }
+      }
+    })
+    .state('app.cards', {
+      url: '/cards',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/cards.html',
+          controller: 'CardsCtrl'
+        }
+      },
+      resolve: {
+        getCards: function(cardService){
+          return cardService.index();
         }
       }
     })

@@ -1,0 +1,44 @@
+<ion-view view-title="Details">
+  <ion-content class="padding has-header">
+    <div class="card">
+      <div class="item item-divider">
+        Pickup information
+      </div>
+      <div class="item item-text-wrap">
+        <h3>{{order.store.name}}</h3>
+        <p>{{order.store.address}}</p>
+        <p>{{order.pickup}}</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-divider">
+        Payment information
+      </div>
+      <div class="item item-text-wrap">
+        <h3>{{order.price}}¥</h3>
+        <p>Payment method: {{order.method}}</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-divider">
+        Products
+      </div>
+      <div class="item item-text-wrap">
+        <div class="list">
+          <div ng-repeat="product in order.product_orders">
+              <p>{{product.product.name}} - {{product.product.price}}¥ Qty: {{product.quantity}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div ng-if="order.order_status == 'received'" class="row">
+      <div class="col col-center text-center">
+        <img src="http://api.qrserver.com/v1/create-qr-code/?color=000000&amp;bgcolor=FFFFFF&amp;data={{order.id}}&amp;qzone=1&amp;margin=0&amp;size=400x400&amp;ecc=L" alt="qr code" width="200" height="200" />
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

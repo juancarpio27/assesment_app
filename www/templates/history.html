@@ -1,5 +1,58 @@
-<ion-view view-title="History">
-  <ion-content>
+<ion-view view-title="History" >
 
-  </ion-content>
+
+
+    <ion-tabs class="tabs-positive tabs-icon-top" >
+
+      <ion-tab title="Upcoming" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+        <br><br>
+
+        <div class="row">
+          <div class="col col-center text-center">
+            <h4>Upcoming orders</h4>
+          </div>
+        </div>
+
+        <div class="list card">
+
+          <div ng-repeat="order in upcoming">
+            <a class="item item-avatar" href="#/app/history/{{order.id}}">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/7-eleven-brand.svg/1200px-7-eleven-brand.svg.png">
+              <h2>{{order.store.name}}</h2>
+              <p>{{order.price}}¥</p>
+              <p>{{order.pickup}}</p>
+            </a>
+          </div>
+
+
+        </div>
+      </ion-tab>
+
+      <ion-tab title="History" icon-on="ion-ios-filing" icon-off="ion-calendar">
+        <br><br>
+
+        <div class="row">
+          <div class="col col-center text-center">
+            <h4>Completed orders</h4>
+          </div>
+        </div>
+
+        <div class="list card">
+
+          <div ng-repeat="order in completed">
+            <a class="item item-avatar" href="#/app/history/{{order.id}}">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/7-eleven-brand.svg/1200px-7-eleven-brand.svg.png">
+              <h2>{{order.store.name}}</h2>
+              <p>{{order.price}}¥</p>
+              <p>{{order.pickup}}</p>
+            </a>
+          </div>
+
+
+        </div>
+      </ion-tab>
+
+    </ion-tabs>
+
+
 </ion-view>

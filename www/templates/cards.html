@@ -1,0 +1,107 @@
+<ion-view view-title="Cards">
+  <ion-content class="padding has-header">
+    <div class="list">
+      <div ng-repeat="card in cards track by $index">
+        <div class="item item-button-right">
+          {{card.number}} - {{card.brand}}
+          <button class="button button-assertive" ng-click="removeCard(card,$index)">
+            <i class="ion-close-round"></i>
+          </button>
+        </div>
+      </div>
+
+      <div ng-if="cards.length == 0">
+        <div class="card">
+          <div class="item item-text-wrap">
+            You don' have any card yet.
+          </div>
+        </div>
+      </div>
+
+      <button class="button button-block button-positive" ng-click="openModal()">
+        Add Card
+      </button>
+
+
+    </div>
+  </ion-content>
+</ion-view>
+
+
+<script id="templates/addCard.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-positive">
+      <h1 class="title">New Card</h1>
+      <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+    </ion-header-bar>
+    <ion-content class="padding">
+      <div class="list">
+
+        <label class="item item-input">
+          <span class="input-label">Card number</span>
+          <input ng-model="cardData.number" type="text">
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Holder name</span>
+          <input ng-model="cardData.holder_name" type="text">
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Brand
+          </div>
+          <select ng-model="cardData.brand">
+            <option value="visa">Visa</option>
+            <option value="mc">Master Cards</option>
+          </select>
+        </label>
+
+        <div class="row">
+          <div class="col col-50">
+            <label class="item item-input item-select">
+              <div class="input-label">
+                Month
+              </div>
+              <select ng-model="cardData.expiration_month">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+            </label>
+          </div>
+          <div class="col col-50">
+            <label class="item item-input item-select">
+              <div class="input-label">
+                Year
+              </div>
+              <select ng-model="cardData.expiration_year">
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <button class="button button-full button-positive" ng-click="addCard()">Add Card</button>
+      </div>
+    </ion-content>
+  </ion-modal-view>
+</script>
+

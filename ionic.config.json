@@ -15,12 +15,20 @@
       "proxyUrl": "https://murmuring-caverns-11160.herokuapp.com/api/stores"
     },
     {
+      "path": "/api/cards",
+      "proxyUrl": "https://murmuring-caverns-11160.herokuapp.com/api/cards"
+    },
+    {
       "path": "/api/categories",
       "proxyUrl": "https://murmuring-caverns-11160.herokuapp.com/api/categories"
     },
     {
       "path": "/api/product_stores/get_products_by_category",
       "proxyUrl": "https://murmuring-caverns-11160.herokuapp.com/api/product_stores/get_products_by_category"
+    },
+    {
+      "path": "/api/orders",
+      "proxyUrl": "https://murmuring-caverns-11160.herokuapp.com/api/orders"
     }
   ]
 }

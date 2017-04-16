@@ -1,0 +1,41 @@
+<ion-view view-title="Products">
+  <ion-content class="padding has-header">
+    <div class="list">
+      <div ng-repeat="product in products">
+        <div class="item item-button-right">
+          {{product.product.name}} - {{product.product.price}}¥
+          <button class="button button-positive" ng-click="openModal(product)">
+             Add
+          </button>
+        </div>
+      </div>
+
+      <div ng-if="products.length == 0">
+        <div class="card">
+          <div class="item item-text-wrap">
+            Sorry, the are no products available for this category at the moment.
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+
+<script id="templates/modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-positive">
+      <h1 class="title">New Contact</h1>
+      <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+    </ion-header-bar>
+    <ion-content class="padding">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Quantity</span>
+          <input ng-model="quantity" type="number">
+        </label>
+        <button class="button button-full button-positive" ng-click="addToCart(modalData,quantity)">Add to Cart</button>
+      </div>
+    </ion-content>
+  </ion-modal-view>
+</script>
+

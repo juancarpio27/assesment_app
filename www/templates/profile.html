@@ -1,5 +1,32 @@
 <ion-view view-title="Profile">
   <ion-content>
-    
+    <ul class="list">
+      <a class="item item-icon-left  positive">
+        <i class="icon ion-social-yen"></i>
+        Points: {{user.points}}
+      </a>
+
+      <a class="item item-icon-left">
+        <i class="icon ion-email"></i>
+        Email: {{user.email}}
+      </a>
+
+      <a class="item item-icon-left">
+        <i class="icon ion-person"></i>
+        Name: {{user.name}}
+      </a>
+      <a class="item item-icon-left">
+        <i class="icon ion-person"></i>
+        Lastname: {{user.lastname}}
+      </a>
+      <a class="item item-icon-left">
+        <i class="icon ion-calendar"></i>
+        Age: {{user.age}}
+      </a>
+      <a class="item item-icon-left">
+        <i class="icon ion-transgender"></i>
+        Sex: {{user.sex}}
+      </a>
+    </ul>
   </ion-content>
 </ion-view>

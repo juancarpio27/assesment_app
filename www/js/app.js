@@ -57,7 +57,58 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
       }
     }
   })
+    .state('app.history', {
+      url: '/history',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/history.html',
+          controller: 'HistoryCtrl'
+        }
+      }
+    })
+    .state('app.shop', {
+      url: '/shop',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/shop.html',
+          controller: 'ShopCtrl'
+        }
+      },
+      resolve: {
+        getStores: function(storeService){
+          return storeService.index();
+        },
+        getCategories: function(categoryService){
+          return categoryService.index();
+        }
+      }
+    })
 
+    .state('app.products', {
+      url: '/shop/:id',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/products.html',
+          controller: 'ProductsCtrl'
+        }
+      },
+      resolve: {
+        getProducts: function(categoryService,$stateParams){
+          var storeId = localStorage.getItem('storeId');
+          return categoryService.getProductsByStore($stateParams.id,storeId);
+        }
+      }
+    })
+
+    .state('app.cart', {
+      url: '/cart',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/cart.html',
+          controller: 'CartCtrl'
+        }
+      }
+    })
   .state('app.home', {
       url: '/home',
       views: {
@@ -66,7 +117,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
           controller: 'HomeCtrl'
         }
       }
-    })
+    });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 });

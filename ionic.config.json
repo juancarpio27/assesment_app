@@ -1,0 +1,14 @@
+{
+  "name": "seven",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/api/users",
+      "proxyUrl": "https://murmuring-caverns-11160.herokuapp.com/api/users"
+    },
+    {
+      "path": "/api/sessions/plain",
+      "proxyUrl": "https://murmuring-caverns-11160.herokuapp.com/api/sessions/plain"
+    }
+  ]
+}

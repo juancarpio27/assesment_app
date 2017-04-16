@@ -1,0 +1,29 @@
+<ion-view view-title="Login">
+  <div class="bar bar-header bar-positive">
+      <h1 class="title">Login</h1>
+  </div>
+  <ion-content class="padding has-header">  
+    <form ng-submit="doLogin()">
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="Email" ng-model="loginData.email"/>
+        </label>
+        <label class="item item-input">
+          <input type="password" placeholder="Password" ng-model="loginData.password"/>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Log in</button>
+        </label>
+      </div>
+      
+    </form>
+    <div class="row">
+      <div class="col col-center text-center">
+        <a href="#/register">Not a member?</a><br>
+        <a href="#/register">Join 7eleven Japan</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+
+

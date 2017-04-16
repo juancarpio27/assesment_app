@@ -1,0 +1,48 @@
+<ion-view view-title="Login">
+  <div class="bar bar-header bar-positive">
+      <h1 class="title">Register</h1>
+  </div>
+  <ion-content class="padding has-header">  
+    <form ng-submit="doRegister()">
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="Name" ng-model="registerData.name"/>
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Lastname" ng-model="registerData.lastname"/>
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Email" ng-model="registerData.email"/>
+        </label>
+        <label class="item item-input">
+          <input type="password" placeholder="Password" ng-model="registerData.password"/>
+        </label>
+        <label class="item item-input">
+          <input type="password" placeholder="Password confirmation" ng-model="registerData.password_confirmation"/>
+        </label>
+        <label class="item item-input item-select">
+            <div class="input-label">
+                Sex
+            </div>
+            <select ng-model="registerData.sex">
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+            </select>
+        </label>
+        <label class="item item-input">
+          <input type="number" placeholder="Age" ng-model="registerData.age"/>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Register</button>
+        </label>
+        
+      </div>
+      
+    </form>
+    <div class="row">
+      <div class="col col-center text-center">
+        <a href="#/login">Back to login</a><br>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

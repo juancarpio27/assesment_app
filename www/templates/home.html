@@ -1,5 +1,53 @@
 <ion-view view-title="Home">
-  <ion-content>
-    
-  </ion-content>
+  <ion-tabs class="tabs-positive tabs-icon-top" >
+
+    <ion-tab title="Offers" icon-on="ion-wand" icon-off="ion-wand">
+      <br><br>
+
+      <div class="row">
+        <div class="col col-center text-center">
+          <h4>New offers!</h4>
+        </div>
+      </div>
+
+      <div class="list card">
+
+        <div ng-repeat="offer in offers">
+          <div class="item item-avatar item-text-wrap" href="#/app/history/{{order.id}}">
+            <img src="{{offer.image}}">
+            <p>{{offer.description}}</p>
+          </div>
+        </div>
+
+
+      </div>
+
+    </ion-tab>
+
+    <ion-tab title="Points" icon-on="ion-social-yen" icon-off="ion-social-yen">
+      <br><br>
+
+      <div class="row">
+        <div class="col col-center text-center">
+          <h4>Pay with points!</h4>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col col-center text-center">
+          <img src="http://api.qrserver.com/v1/create-qr-code/?color=000000&amp;bgcolor=FFFFFF&amp;data=1&amp;qzone=1&amp;margin=0&amp;size=400x400&amp;ecc=L" alt="qr code" width="200" height="200" />
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="item item-text-wrap">
+          <p>You have available:</p>
+          <h3 class="positive">{{user.points}} points</h3>
+        </div>
+      </div>
+
+    </ion-tab>
+
+  </ion-tabs>
+
 </ion-view>

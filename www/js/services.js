@@ -151,6 +151,24 @@ angular.module('starter.services', [])
 
   })
 
+  .factory('offerService', function($http){
+
+    var offerService = {};
+    var url = '/api/offers';
+    //var url = 'https://murmuring-caverns-11160.herokuapp.com/api/offers';
+
+    offerService.index = function(){
+      return $http({
+        method: 'GET',
+        url: url
+      });
+    };
+
+
+    return offerService;
+
+  })
+
   .factory('categoryService', function($http){
 
     var categoryService = {};

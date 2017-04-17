@@ -7,7 +7,11 @@ angular.module('starter.controllers', [])
   })
 
 
-  .controller('HomeCtrl', function($scope, $stateParams) {
+  .controller('HomeCtrl', function($scope, $stateParams,getOffers) {
+    $scope.offers = getOffers.data;
+
+    $scope.user = JSON.parse(localStorage.getItem('user'));
+
   })
 
   .controller('HistoryInfoCtrl', function($scope, $stateParams,getOrder) {

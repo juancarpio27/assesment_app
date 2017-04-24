@@ -158,6 +158,9 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
       resolve: {
         getOffers: function(offerService){
           return offerService.index();
+        },
+        dailyOffer: function(offerStore){
+          return offerStore.get();
         }
       }
     });

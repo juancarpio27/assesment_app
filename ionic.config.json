@@ -33,6 +33,10 @@
     {
       "path": "/api/orders",
       "proxyUrl": "https://murmuring-caverns-11160.herokuapp.com/api/orders"
+    },
+    {
+      "path": "/api/offer_stores/get_last_promotion",
+      "proxyUrl": "https://murmuring-caverns-11160.herokuapp.com/api/offer_stores/get_last_promotion"
     }
   ]
 }

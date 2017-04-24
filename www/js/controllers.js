@@ -7,8 +7,10 @@ angular.module('starter.controllers', [])
   })
 
 
-  .controller('HomeCtrl', function($scope, $stateParams,getOffers) {
+  .controller('HomeCtrl', function($scope, $stateParams,getOffers,dailyOffer) {
     $scope.offers = getOffers.data;
+
+    $scope.dailyOffer = dailyOffer.data;
 
     $scope.user = JSON.parse(localStorage.getItem('user'));
 

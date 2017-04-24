@@ -169,6 +169,30 @@ angular.module('starter.services', [])
 
   })
 
+  .factory('offerStore',function($http){
+
+    var offerStore = {};
+    var user = JSON.parse(localStorage.getItem('user'));
+    var url = "/api/offer_stores/get_last_promotion";
+    //var url = "https://murmuring-caverns-11160.herokuapp.com/api/offer_stores/get_last_promotion";
+    var access_token = user.access_token;
+
+
+    offerStore.get = function(){
+      return $http({
+        method: 'GET',
+        url: url,
+        headers: {
+          Authorization: 'Token '+access_token
+        }
+      });
+    };
+
+
+    return offerStore;
+
+  })
+
   .factory('categoryService', function($http){
 
     var categoryService = {};
